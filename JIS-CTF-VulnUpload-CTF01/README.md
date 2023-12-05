@@ -2,6 +2,8 @@
 
 ### 攻擊主機：Kali_Linux_2019.3 
 ### 靶機：JIS-CTF-VulnUpload-CTF01
+> 這個靶機跟網路上的不太一樣，因為教授改過內容才給我們打。
+> ※教授說他忘了放第五支旗
 
 #### 搜尋靶機IP
 > **Kali>** <code>arp-scan -l</code> </br>
@@ -68,6 +70,49 @@
 > 使用Jimmy進行登入<br/>
 > 發現bash無法下sudo，故先下bash指令<br/>
 > **$** <code>su jimmy</code><br/>
+![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/022276e4-2ed8-40bd-96b1-0c7f8bdf3df3) <br/>
+> 成功變成能下sudo的bash
+#### 提權成root
+![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/5589079d-8bfc-476d-8866-874dfbcf173b) </br>
+> 成功😄
+
+#### 找漏網之旗
+> 在Home資料夾下看到了technawi和.jimmy兩個使用者資料夾</br>
+> 在technawi中看到了Jun 5建立(教授放檔案進去的日期，看到這個日期都很可疑)的檔案有flag.txt和.credentials.txt</br>
+![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/c6272d81-d77c-4d3e-bb62-bb1445a703e3)</br>
+> 得到第六支旗和第七支旗</br>
+```js
+    Great! But you need to find other account to execute sudo:15 points
+[jimmy] is the account you need to hydra:15 points
+``` 
+
+> 在.jimmy中看到了Jun 5建立(教授放檔案進去的日期，看到這個日期都很可疑)的檔案有jimmy.txt</br>
+> ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/5c5a9bf1-518a-4ad8-b9b3-d98345ac2c96)</br>
+> 得到了第八支旗</br>
+```js
+   As what we always said: Please protect yourself with these hacking skill:20 points
+``` 
+
+> 到root下看看有什麼</br>
+> 在Desktop找到了Jun 5建立(教授放檔案進去的日期，看到這個日期都很可疑)的檔案有finish.txt和youseeme.jpg兩個檔案</br>
+> ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/7606dc42-08ec-434c-895b-7a522ab874f4)</br>
+> 在finish.txt得到第九支旗</br>
+```js
+    Good JOB! You finished this CTF! Please protect yourself with these hacking skill:20 points
+```
+
+![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/896bd863-2f96-4fda-beb7-ba12e9d5f3d7)</br>
+> 在youseeme.jpg得到第十支旗</br>
+```js
+    Look forward to seeing you again, and hope what I shared can help you ^_^ :20 points
+```
+
+#### ※補充：教授提供第十支旗的正確解法
+> hexdump -C youseeme.jpg |more</br>
+![Uploading image.png…]()</br>
+
+
+
 
 
 
