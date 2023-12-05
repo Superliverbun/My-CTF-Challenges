@@ -109,7 +109,8 @@
 
 #### ※補充：教授提供第十支旗的正確解法
 > hexdump -C youseeme.jpg |more</br>
-![Uploading image.png…]()</br>
+![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/d5292577-920b-4e04-a0ae-e6a3e34a1cc6)
+</br>
 
 
 
