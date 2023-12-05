@@ -17,7 +17,12 @@
   </tr>
   <tr>
     <td><a href="https://github.com/Superliverbun/My-CTF-Challenges/tree/main/Basic_Pentesting_2.1">Basic_Pentesting_2.1</a></td>
-    <td>⭐⭐</td>
+    <td>⭐</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Superliverbun/My-CTF-Challenges/tree/main/RickdiculouslyEasy">RickdiculouslyEasy</a></td>
+    <td>⭐</td>
     <td></td>
   </tr>
 </table>
