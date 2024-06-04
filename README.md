@@ -29,5 +29,6 @@
 
 
 
-##### 比賽
+#### 比賽
+##### 我建立了一個Write-up的資料庫，用來統整所有我寫過的CTF題目，提供給大家方便查找。
 <a href="https://heather-den-d46.notion.site/033a365e09be45e0a1a388a364eb9c36?v=da8e2effbfe640eea707aec36c711220">Write up Database</a>
